@@ -1,0 +1,28 @@
+# ============================================
+# 友链列表
+# 路径: dev/data/friends.yml
+# ============================================
+# 此文件会覆盖主题的 themes/reimu/data/friends.yml
+# 格式：每项包含 name（名称）、url（网址）、desc（描述）、image（头像，可选）
+# ============================================
+
+# --- 友链示例 1 ---
+- name: " "
+  url: https://d-sketon.github.io/
+  desc: Hexo 建站
+  image: https://via.placeholder.com/100x100/ffffff/ffffff.png
+
+# --- 友链示例 2 ---
+- name: " "
+  url: https://d-sketon.github.io/astro-theme-reimu/
+  desc: Astro 建站
+  image: https://via.placeholder.com/100x100/ffffff/ffffff.png
+
+# ============================================
+# 在下方添加你自己的友链
+# 格式参考上方示例：
+# - name: 博主名称
+#   url: https://example.com
+#   desc: 一句话描述
+#   image: https://example.com/avatar.jpg
+# ============================================

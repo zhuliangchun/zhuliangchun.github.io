@@ -1,0 +1,102 @@
+/* ============================================
+   🎨 自定义样式覆盖
+   路径: dev/assets/css/_custom.scss
+   ============================================ */
+
+/* ============================================
+   1. 音乐播放器卡片优化
+   封面（左）与 歌曲名+进度条+时间+音量（右）对齐
+   进度条对齐封面垂直中部
+   ============================================ */
+.aplayer:not(.aplayer-fixed) {
+  /* 主体：封面在左，信息在右，垂直居中 */
+  .aplayer-body {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 4px 0 !important;
+  }
+
+  /* 封面：固定 80×80，垂直居中 */
+  .aplayer-pic {
+    width: 80px !important;
+    height: 80px !important;
+    flex-shrink: 0 !important;
+    align-self: center !important;
+    margin: 0 !important;
+  }
+
+  /* 信息区：与封面等高，上下分布 */
+  .aplayer-info {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 80px !important;
+    padding: 0 !important;
+    border: none !important;
+    min-width: 0 !important;
+  }
+
+  /* 歌曲名+作者：顶部 */
+  .aplayer-music {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  /* 控制器：进度条+时间+音量，底部，纵向排列 */
+  .aplayer-controller {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  /* 进度条：全宽，对齐封面中部 */
+  .aplayer-bar-wrap {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* 时间+播放控制+音量：横向排列 */
+  .aplayer-time {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    height: auto !important;
+  }
+
+  /* 音量控制 */
+  .aplayer-volume-wrap {
+    margin: 0 !important;
+  }
+}
+
+/* ============================================
+   2. 搜索元素隐藏（关于页/友链页）
+   baseof.html 已有条件判断，此处作为 CSS 双重保障
+   ============================================ */
+/* 当 algolia_search 禁用时，搜索相关元素不应出现 */
+/* 如需在特定页面强制隐藏，取消下方注释 */
+/*
+.page-about .site-search,
+.page-friend .site-search,
+.page-about #nav-search-btn,
+.page-friend #nav-search-btn {
+  display: none !important;
+}
+*/

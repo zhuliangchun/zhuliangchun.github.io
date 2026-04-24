@@ -1,0 +1,455 @@
+########################################
+# 📌 你的个性化配置
+# 此文件位于 dev/config/_default/params.yml
+# 会覆盖主题的 themes/reimu/config/_default/params.yml
+# 只要在此文件中指定你想改的字段，Hugo 会自动用你的值替换主题的值
+########################################
+
+# ========================================
+# 1. 基本信息（必改）
+# ========================================
+author: 朱良春
+email: 2206815134@qq.com
+description: "欢迎来到我的博客！"
+
+# 副标题（首页大标题旁的描述文字）
+subtitle:
+  text: "记录，让成长有迹可循"
+
+# Banner 大图（放在 dev/static/images/ 下，引用格式: "images/xxx.webp"）
+# 也可以用网络图片: "https://example.com/banner.jpg"
+banner: "images/banner.webp"
+
+# 是否启用 srcset（多分辨率 banner，自动适配不同屏幕）
+banner_srcset:
+  enable: True
+  # 启用后需要准备好多个尺寸的图片:
+  srcset:
+     - src: "images/banner-600w.webp"
+       media: "(max-width: 479px)"
+     - src: "images/banner-800w.webp"
+       media: "(max-width: 799px)"
+     - src: "images/banner.webp"
+       media: "(min-width: 800px)"
+
+# 头像（放在 dev/static/images/avatar.webp）
+# 也可以用网络图片: "https://example.com/avatar.jpg"
+avatar: "images/avatar.webp"
+
+# ========================================
+# 2. 菜单配置
+# ========================================
+menu:
+  - name: home
+    url: ""
+    icon: false
+  - name: archives
+    url: "archives"
+    icon: false
+  - name: about
+    url: "about"
+    icon: false
+  - name: friend
+    url: "friend"
+    icon: false
+
+# ========================================
+# 3. 社交链接
+# ========================================
+# 取消注释你想启用的社交平台
+# 格式: 平台名: 链接地址
+social:
+  github: https://github.com/zhuliangchun
+  # email: mailto:your_email@example.com
+  bilibili: https://space.bilibili.com/3546973009348613?spm_id_from=333.1007.0.0
+  # twitter: https://twitter.com/yourname
+  # weibo: https://weibo.com/yourname
+  # zhihu: https://www.zhihu.com/people/yourname
+  # telegram: https://t.me/yourname
+  #  steam: https://steamcommunity.com/id/yourname
+  #  youtube: https://www.youtube.com/@yourname
+
+# ========================================
+# 4. 侧边栏小部件
+# ========================================
+# 当前启用: 分类、标签、标签云、最新文章
+# 注释掉 = 删除该项
+widgets:
+  - category
+  - tag
+  #- tagcloud
+  #- recent_posts
+
+# ========================================
+# 5. 功能开关（按需关闭）
+# ========================================
+
+# 烟花特效 → 关闭: enable 改为 false
+firework:
+  enable: false  # 已关闭烟花特效，避免干扰
+  disable_on_mobile: false
+  options:
+    excludeElements: ["a", "button"]
+    particles:
+      - shape: circle
+        move: ["emit"]
+        easing: easeOutExpo
+        colors: ["#4cc9f0", "#4895ef", "#4361ee", "#3a0ca3"]  # 渐变的蓝色
+        number: 20
+        duration: [1200, 1800]
+        shapeOptions:
+          radius: [16, 32]
+          alpha: [0.3, 0.5]
+      - shape: circle
+        move: ["diffuse"]
+        easing: easeOutExpo
+        colors: ["#8bb9fe"]  # 浅蓝色
+        number: 1
+        duration: [1200, 1800]
+        shapeOptions:
+          radius: 20
+          alpha: [0.2, 0.5]
+          lineWidth: 6
+
+# 页面加载动画 → 关闭: enable 改为 false
+preloader:
+  enable: true
+  text:
+    zh-CN: 骇入中...
+    zh-TW: 駭入中...
+    en: Hacking...
+    ja: ハッキング中...
+    pt-BR: Hackeando...
+  icon: false
+  rotate: false
+
+# 页面滚动动画 → 关闭: enable 改为 false
+animation:
+  enable: false  # 已禁用以提升性能，减少动画资源消耗
+  options:
+    header:
+      title: slide-up
+      subTitle: slide-down
+    home:
+      post: fade-up
+      widget: fade-up
+      sidebar: fade-up
+    article:
+      whole: fade-up
+      date: zoom-in
+      category: zoom-in
+      tag: zoom-in
+      comment: zoom-in
+      reading: zoom-in
+      nav: fade-up
+    archive:
+      whole: fade-up
+      tag: zoom-in
+      category: zoom-in
+      section: fade-up
+      nav: fade-up
+
+# 回到顶部按钮 → 关闭: enable 改为 false
+top:
+  enable: true
+  position: right
+  icon:
+    url: false
+    rotate: false
+    mask: false
+
+# 音乐播放器 → 开启: enable 改为 true
+player:
+  enable: true
+  disable_on_mobile: false
+  position: sidebar_card
+  aplayer:
+    enable: true
+    options:
+      audio:
+        - name: "示例曲目"
+          artist: "未知艺术家"
+          url: ""
+          cover: ""
+      fixed: false
+      autoplay: false
+      loop: all
+      order: list
+      preload: auto
+      volume: 0.7
+      mutex: true
+      listFolded: false
+      lrcType: 0
+  meting:
+    enable: false
+    meting_api:
+    options:
+      id: 2265921590
+      server: netease
+      type: playlist
+      auto:
+
+# 搜索功能 (Algolia)
+algolia_search:
+  enable: false  # 已禁用以减少加载时间，如需搜索功能可考虑本地搜索
+  appID: "WJQNRN0TSI"                     # 您的 Application ID
+  apiKey: "53c0d304ca8f57d4e414d290f519cb55" # 您的 Search-Only API Key
+  indexName: "blog_content"               # 请在此处填写您创建的索引名称
+  hits:
+    per_page: 10
+
+# 阅读进度条（Pace.js）→ 关闭: enable 改为 false
+pace:
+  enable: false  # 已禁用以减少加载时间
+
+# 数学公式渲染（KaTeX）→ 关闭: katex.enable 改为 false
+math:
+  katex:
+    enable: false  # 已禁用以减少加载时间，如需数学公式再启用
+  mathjax:
+    enable: false
+    options:
+      [
+        {
+          tex:
+            {
+              tags: "ams",
+              useLabelIds: true,
+              inlineMath: [["$", "$"], ['\\(', '\\)']],
+              displayMath: [["$$", "$$"], ['\\[', '\\]']],
+              processEscapes: true,
+              processEnvironments: true,
+              autoload: { color: [], colorv2: ["color"] },
+              packages: { "[+]": ["noerrors"] },
+            },
+          options:
+            {
+              skipHtmlTags:
+                ["script", "noscript", "style", "textarea", "pre", "code"],
+              ignoreHtmlClass: "tex2jax_ignore",
+              processHtmlClass: "tex2jax_process",
+            },
+          loader: { load: ["input/asciimath", "[tex]/noerrors"] },
+        },
+      ]
+
+# 评论区 → 关闭: waline.enable 改为 false
+comment:
+  default: waline
+
+waline:
+  enable: false
+  serverURL:
+  lang: zh-CN
+  emoji:
+    - https://unpkg.com/@waline/emojis@1.2.0/weibo
+    - https://unpkg.com/@waline/emojis@1.2.0/alus
+    - https://unpkg.com/@waline/emojis@1.2.0/bilibili
+    - https://unpkg.com/@waline/emojis@1.2.0/qq
+    - https://unpkg.com/@waline/emojis@1.2.0/tieba
+    - https://unpkg.com/@waline/emojis@1.2.0/tw-emoji
+  meta:
+    - nick
+    - mail
+    - link
+  requiredMeta:
+    - nick
+    - mail
+  wordLimit: 0
+  pageSize: 10
+  pageview: true
+
+# 打赏/赞助功能 → 关闭: enable 改为 false
+sponsor:
+  enable: false
+  tip:
+    zh-CN: 喝杯咖啡？
+    en: Buy me a coffee
+  icon:
+    url: false
+    rotate: false
+    mask: false
+  qr:
+    # - name: 支付宝
+    #   src: "sponsor/alipay.jpg"
+    # - name: 微信
+    #   src: "sponsor/wechat.png"
+
+# 站点统计（不蒜子）→ 关闭: busuanzi 改为 false
+footer:
+  since: 2026
+  powered: true
+  count: true
+  busuanzi: false
+  icon:
+    url: false
+    rotate: false
+    mask: false
+
+# 文章版权声明 → 关闭: enable 改为 false
+article_copyright:
+  enable: true
+  content:
+    author: true
+    link: true
+    title: false
+    date: false
+    updated: false
+    license: true
+    license_type: by-nc-sa
+
+# ========================================
+# 6. 配色方案
+# ========================================
+# 主题色目前是红色系。修改 --red-* 的值即可换色。
+# 示例：蓝色系
+#   --red-0: '#0066ff'   ← 主色（最重要）
+#   --red-1: '#4488ff'
+#   --red-2: '#77aaff'
+#   --red-3: '#aaccff'
+#   --red-4: '#ddeeff'
+# 示例：绿色系
+#   --red-0: '#00cc66'
+#   --red-1: '#22dd88'
+#   --red-2: '#66eeaa'
+#   --red-3: '#aaffcc'
+#   --red-4: '#ddf7ee'
+# 示例：紫色系
+#   --red-0: '#9933ff'
+#   --red-1: '#aa55ff'
+#   --red-2: '#cc88ff'
+#   --red-3: '#ddbbff'
+#   --red-4: '#eeddff'
+
+internal_theme:
+  light:
+    # 橙红色主色调
+    --red-0: '#e63000'        # 主橙红色
+    --red-1: '#ff4500'        # 中等橙红
+    --red-2: '#ff6633'        # 浅橙红
+    --red-3: '#ff9966'        # 淡橙红
+    --red-4: '#ffccbb'        # 很淡的橙红
+    --red-5: '#ffe8e0'        # 极淡橙红
+    --red-5-5: '#fff3ef'      # 接近白色带橙
+    --red-6: '#fff8f6'        # 背景橙白
+    # 橙红色阴影
+    --color-red-6-shadow: 'rgba(230, 48, 0, 0.6)'
+    --color-red-3-shadow: 'rgba(230, 48, 0, 0.3)'
+    # 高亮代码颜色（橙红主题）
+    --highlight-nav: "#fff5f2"           # 导航栏背景
+    --highlight-scrollbar: "#ffaa88"     # 滚动条
+    --highlight-background: "#ffffff"    # 代码背景
+    --highlight-selection: "#ffe8e088"   # 选中背景
+    --highlight-foreground: "#3d1a0a"    # 前景色
+    --highlight-comment: "#8a6a5a"       # 注释
+    --highlight-red: "#e63000"           # 主色 -> 橙红
+    --highlight-orange: "#ff6600"        # 橙色
+    --highlight-yellow: "#ffcc00"        # 黄色
+    --highlight-green: "#00aa55"         # 绿色
+    --highlight-aqua: "#0099cc"          # 青色
+    --highlight-blue: "#3366ff"          # 蓝色
+    --highlight-purple: "#9933ff"        # 紫色
+    --highlight-deletion: "#cc2200"      # 删除文字
+    --highlight-deletion-bg: "#ffe0d9"   # 删除背景
+    --highlight-addition: "#006622"      # 添加文字
+    --highlight-addition-bg: "#e6ffe6"   # 添加背景
+  dark:
+    # 暗色系橙红
+    --red-4: 'rgba(255, 69, 0, 0.6)'    # 中等透明度橙红
+    --red-5: 'rgba(255, 69, 0, 0.2)'    # 浅透明度橙红
+    --red-5-5: 'rgba(255, 69, 0, 0.1)'  # 很浅橙红
+    --red-6: 'rgba(255, 69, 0, 0.05)'   # 极浅橙红
+    # 暗色主题高亮代码颜色（橙红主题）
+    --highlight-nav: "#1a0a05"           # 深橙黑导航
+    --highlight-scrollbar: "#8b2500"     # 滚动条
+    --highlight-background: "#1a0d08"    # 背景
+    --highlight-selection: "#8b250055"   # 选中背景
+    --highlight-foreground: "#e8d5cc"    # 前景文字
+    --highlight-comment: "#8a6a5a"       # 注释
+    --highlight-red: "#ff7755"           # 橙红色
+    --highlight-orange: "#fbbf24"        # 橙色
+    --highlight-yellow: "#fde047"        # 黄色
+    --highlight-green: "#4ade80"         # 绿色
+    --highlight-aqua: "#22d3ee"          # 青色
+    --highlight-blue: "#3b82f6"          # 蓝色
+    --highlight-purple: "#a78bfa"        # 紫色
+    --highlight-deletion: "#ff9977"      # 删除文字
+    --highlight-deletion-bg: "#8b2500"   # 删除背景
+    --highlight-addition: "#86efac"      # 添加文字
+    --highlight-addition-bg: "#14532d"   # 添加背景
+
+
+# ========================================
+# 7. 字体配置
+# ========================================
+font:
+  enable: false  # 已禁用 Google Fonts，避免国内加载失败导致页面卡顿
+  article:
+    - Mulish
+    - Noto Serif SC
+  code:
+    - Ubuntu Mono
+    - Source Code Pro
+    - JetBrains Mono
+
+local_font:
+  article:
+    - "-apple-system"
+    - PingFang SC
+    - Microsoft YaHei
+    - sans-serif
+  code:
+    - Menlo
+    - Monaco
+    - Consolas
+    - monospace
+
+# ========================================
+# 8. 深色模式
+# ========================================
+# true  = 默认深色模式
+# false = 默认浅色模式
+# auto  = 跟随系统设置
+dark_mode:
+  enable: auto
+
+# ========================================
+# 9. 归档/分类设置
+# ========================================
+mainSections: ["post"]
+yearFormat: "2006"
+monthFormat: "2006-01"
+dateFormat: "2006-01-02"
+timeFormat: "2006-01-02 15:04:05"
+only_show_capsule_in_index: false
+uppercase_capsule: true
+show_update_time: false
+
+# 排序：date-reverse = 最新文章排在前面
+sort_order:
+  taxonomy:
+    category: date-reverse
+    tag: date-reverse
+  archive: date-reverse
+  home: default
+
+# ========================================
+# 10. 其他常用设置
+# ========================================
+# 文章目录（TOC）→ 关闭: toc 改为 false
+toc: true
+
+# RSS 输出 → 限制篇数
+rss:
+  limit: 10
+  showFullContent: false
+  showCopyright: false
+
+# 友链页面（关于页右侧显示友链卡片）
+# 友链内容在 dev/data/friends.yml 里编辑（主题里已有）
+# 关闭右侧友链卡片: article.show_common 改为 false
+sidebar:
+  position: right
+  menu: true
+  article:
+    show_common: true

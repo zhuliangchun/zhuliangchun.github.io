@@ -1,0 +1,37 @@
+baseURL = "https://zhuliangchun.github.io"
+languageCode = "zh-CN"
+defaultContentLanguage = "zh-CN"
+defaultContentLanguageInSubdir = false
+title = "雨落的个人空间"
+theme = "reimu"
+publishDir = "public"
+disableHugoGeneratorInject = false
+timeZone = "Asia/Shanghai"
+
+[languages]
+  [languages.zh-CN]
+    languageName = "中文"
+    weight = 1
+  [languages.en]
+    languageName = "English"
+    weight = 2
+
+[[menu.main]]
+  name = "home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "archives"
+  url = "/archives/"
+  weight = 2
+
+[[menu.main]]
+  name = "about"
+  url = "/about/"
+  weight = 3
+
+[[menu.main]]
+  name = "friend"
+  url = "/friend/"
+  weight = 4
